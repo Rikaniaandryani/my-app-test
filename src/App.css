@@ -1,38 +1,196 @@
+html,
+body {
+    height: 100%;
+}
+
 .App {
-  text-align: center;
+    text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App-header>.border-body {
+    position: relative;
+    border-color: #FFFF;
+    border-style: solid;
+    height: 100%;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 5%/10%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.border-body>.tab-top {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+.dummy {
+    position: relative;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border-style: double;
+    border-color: #282c34;
+    border-width: 5px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin: 50px 100px;
+}
+
+.dummy>.App-cat {
+    object-fit: contain;
+}
+
+.left-area {
+    width: 70%;
+    float: left;
+    text-color: white;
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    margin: auto;
+    align-self: center;
+    justify-content: center;
+}
+
+.bottom-area {
+    display: none;
+}
+
+.border-dummy {
+    width: 30%;
+    float: right;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 10%;
+    border-bottom-left-radius: 15%;
+}
+
+.tab-content {
+    position: relative;
+    display: block;
+    padding: 20px;
+    justify-content: center;
+}
+
+.tab-top>.left-area>h1 {
+    font-size: 4em;
+    margin-bottom: 0px;
+}
+
+.tab-top>.left-area>h2 {
+    font-size: 3em;
+    width: 80%;
+    margin: auto;
+}
+
+.tab-content>p {
+    margin: 50px;
+    text-align: left;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-image: linear-gradient(to right, #0c617a, #71bbd1);
+    height: 100%;
+    /* width: 100%; */
+    padding: 50px;
+    display: block;
+    /* position: relative; */
+    /* display: flex;
+    flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
+}
+
+@media (max-width: 1024px) {
+    .App-header>.border-body {
+        border-radius: 7%/6%;
+    }
+    .left-area {
+        float: none;
+        display: none;
+        width: 100%;
+    }
+    .border-dummy {
+        float: top;
+        width: 100%;
+        border-bottom-left-radius: 0%;
+        border-top-right-radius: 5% 20%;
+        border-top-left-radius: 5% 20%;
+    }
+    .border-dummy>.dummy {
+        width: 100px;
+        height: 100px;
+        margin: 70px auto;
+    }
+    .border-body>.tab-top {
+        margin-top: -1px;
+    }
+    .bottom-area {
+        display: block;
+        padding: 25px;
+    }
+    .bottom-area>h1 {
+        font-size: 3em;
+        transform: translate(0%, 10%);
+    }
+    .bottom-area>h1 {
+        font-size: 2em;
+        /* transform: translate(0%, 10%); */
+    }
+    .tab-content {
+        margin-top: -80px;
+    }
+}
+
+@media (max-width: 600px) {
+    .App-header>.border-body {
+        border-radius: 10%/3%;
+        border-width: 12px;
+    }
+    .border-dummy {
+        border-top-right-radius: 10% 3%;
+        border-top-left-radius: 10% 3%;
+    }
+    .tab-content {
+        margin-top: -40px;
+    }
+}
+
+@media (max-width:414px) {
+    .App-header>.border-body {
+        border-radius: 10%/2%;
+        border-width: 12px;
+    }
+    .border-dummy {
+        border-top-right-radius: 10% 3%;
+        border-top-left-radius: 10% 3%;
+    }
+    .tab-content>p {
+        margin: 10px;
+    }
+}
+
+@media(max-width:374px) {
+    .border-dummy {
+        border-top-right-radius: 5% 5%;
+        border-top-left-radius: 5% 5%;
+    }
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
